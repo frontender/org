@@ -6,7 +6,17 @@
     <script type="text/javascript" charset="utf-8" src="//kainy.cn/js/common.js"></script>
     <script>
       var url = decodeURIComponent(location.hash.replace('#http', 'http'))
-      url && location.replace(url)
+      setTimeout(function() {
+        ga && ga('send', {
+          hitType: 'event',
+          eventCategory: 'frontender',
+          eventAction: location.hash,
+          eventLabel: 'jumpTo'
+        });
+        setTimeout(function(){
+          location.replace(url)
+        }, 88)
+      }, 888)
     </script>
   </head>
   </body>
